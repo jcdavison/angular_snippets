@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="foundation.css">
+  </head>
+  <body>
+    <div ng-app="basicMethods">
+      <div ng-controller="basicCtrl" class="panel">
+        <input type="text" ng-model="data.info">
+        <h2>{{data.info}}</h2>
+        <div class="panel callout">
+          <h2>{{blender(data.info)}}</h2>
+          <h6>In the above, the controller method blender() gets passed data.info and does some shit.</h6>
+        </div>
+        <h6>In the below, the filter chopStuff gets applied to data.info and does some shit, it is also being passed the 'Data' factory and appending it.</h6>
+        <h3>{{data.info | chopStuff}}</h3>
+      </div>
+    </div>
+    <script src="js/angular.js"></script>
+    <script src="js/controllerMethods.js"></script>
+  </body>
+</html>

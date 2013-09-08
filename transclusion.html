@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="foundation.css">
+  </head>
+  <body>
+    <div ng-app="transClude">
+      
+      <div ng-controller="transCtrl">
+        <trans>
+        <!-- tranclusion allows the elements inside the directive to be appended to the dir template -->
+          <div class="panel callout">Callout Panel</div>
+        </trans>
+      </div>
+      <h5 class="subheader">the div 'a master... container' is nested via a directive inside the original 'Callout Panel'</h5>
+      <h5 class="subheader">that is the basics of transclusion</h5>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="js/transclusion.js"></script>
+  </body>
+</html>

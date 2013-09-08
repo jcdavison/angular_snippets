@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="foundation.css">
+  </head>
+  <body>
+    <div ng-app="dotController">
+      <input type="text" ng-model="info.content" placeholder="shared scope">
+      <h2>{{info.content}}</h2>
+
+      <div ng-controller="firstCtrl">
+        <input type="text" ng-model="info.content">
+        <h2>{{info.content}}</h2>
+      </div>
+      
+      <div ng-controller="secondCtrl">
+        <input type="text" ng-model="info.content">
+        <h2>{{info.content}}</h2>
+      </div>
+      <h3>In the above, the models are bound together because the scope is shared, but in the below, using the model 'message', the scopes become independent
+        .</h3>
+
+      <div ng-controller="firstCtrl">
+        <input type="text" ng-model="content" placeholder="isolated scope">
+        <h2>{{content}}</h2>
+      </div>
+      
+      <div ng-controller="secondCtrl">
+        <input type="text" ng-model="content">
+        <h2>{{content}}</h2>
+      </div>
+    </div>
+    <script src="js/angular.js"></script>
+    <script src="js/theDot.js"></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+<head>
+  <link rel="stylesheet" href="foundation.css">
+</head>
+<body>
+  <div ng-app="app" class="panel radius">
+    <script type="text/ng-template" id="partial.html">
+      <div ng-click="toggleContent()"><h4>{{title}}</h4><div ng-show="isContentVisible" ng-transclude></div></div>
+    </script>
+    <input type="text" ng-model="data.title" placeholder="data.title">
+    <input type="text" ng-model="data.content" placeholder="data.content">
+    <zipped title="{{data.title}}">"Original Content", new content: {{data.content}}</zipped>
+  </div>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  <script src="js/templateUrl.js"></script>
+</body>
+</html>

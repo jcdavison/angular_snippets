@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="foundation.css">
+  </head>
+  <body>
+    <div class="panel callout">
+      <div ng-app="nativeFilters">
+        <div ng-controller="ctrl1" class="panel">
+          <input type="text" ng-model="searchString" placeholder="searchString no delimiters">
+          <div ng-repeat="musician in musicians.people | filter:searchString">
+            <h4> {{musician.name}} {{musician.instrument}}</h4>
+          </div>
+
+          <input type="text" ng-model="searchPeople.name" placeholder="searchPeople.name">
+          <div ng-repeat="musician in musicians.people | filter:searchPeople">
+            <h4> {{musician.name}} {{musician.instrument}}</h4>
+          </div>
+
+          <input type="text" ng-model="searchInstrument.instrument" placeholder="searchInstrument.instrument">
+          <div ng-repeat="musician in musicians.people | filter:searchInstrument">
+            <h4> {{musician.name}} {{musician.instrument}}</h4>
+          </div>
+
+          <input type="text" ng-model="search.$" placeholder="searchInstrument.$ the '$' surrogates for String, across entire object">
+          <div ng-repeat="musician in musicians.people | filter:search">
+            <h4> {{musician.name}} {{musician.instrument}}</h4>
+          </div>
+
+        </div>
+        <h6>the ng-model='searchString' gets bound to the filter, bound to the repeat, which makes for slick client side search</h6>
+      </div>
+    </div>
+    <script src="js/angular.js"></script>
+    <script src="js/ngFilters.js"></script>
+  </body>
+</html>

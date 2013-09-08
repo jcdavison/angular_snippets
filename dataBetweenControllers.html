@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="foundation.css">
+  </head>
+  <body>
+    <div ng-app="sharedData">
+
+      <div ng-controller="firstCtrl">
+        <input type="text" ng-model="info.content">
+        <h2>{{info.content}}</h2>
+      </div>
+      <h4>Since the factory 'DataStore' has been passed to both controllers, it is bound in all locations.</h4> 
+      <div ng-controller="secondCtrl">
+        <input type="text" ng-model="info.content">
+        <h2>{{info.content}}</h2>
+      </div>
+
+    </div>
+    <script src="js/angular.js"></script>
+    <script src="js/dataBetweenControllers.js"></script>
+  </body>
+</html>

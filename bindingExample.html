@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="foundation.css">
+  </head>
+  <body>
+    <div ng-app="bindingEx">
+      <input type="text" ng-model="message.info">
+      <!-- the model becomes bound via a listener -->
+      {{message.info + "concatenated text"}}
+      <input type="text" ng-model="data.style" placeholder="data.style">
+      <p>the above style gets written intot he h1 div, very useful for dom manipulation, type:  button alert radius small</p>
+      <h1 class="{{data.style}}">
+        <!-- the handlebars indiciate embeddable js -->
+        {{2 + 2}}
+      </h1>
+    </div>
+    <script src="js/angular.js"></script>
+    <script src="js/bindingExample.js"></script>
+  </body>
+</html>

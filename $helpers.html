@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="foundation.css">
+  </head>
+  <body>
+    <div ng-app="app" class="panel radius">
+      <div ng-repeat="letter in 'somewords'.split('')" class="panel callout">
+        <button class="success medium radius" ng-click="e = $event">{{$index}}</button>
+        <button class="alert tiny radius" ng-click="$log.warn($event)">$log</button>
+        :: {{letter}}
+        <!-- pageX shows the location of the x axis when the click occurs -->
+        :: {{e.pageX}}
+      </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="js/$helpers.js"></script>
+  </body>
+</html>

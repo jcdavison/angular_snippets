@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="foundation.css">
+  </head>
+  <body>
+    <div ng-app="nativeFilters">
+      <div ng-controller="ctrl1" class="panel">
+
+        <input type="text" ng-model="search.$" placeholder="| orderBy:'name'">
+        <div ng-repeat="musician in musicians.people | orderBy:'name'">
+          <h4> {{musician.name}} {{musician.instrument}}</h4>
+        </div>
+
+        <input type="text" ng-model="searchLimit.$" placeholder="| limitTo:5 | filter:searchLimit">
+        <div ng-repeat="musician in musicians.people | limitTo:5 | filter:searchLimit">
+          <h4> {{musician.name}} {{musician.instrument}}</h4>
+        </div>
+      </div>
+      <h6>the ng-model='searchString' gets bound to the filter, bound to the repeat, which makes for slick client side search</h6>
+    </div>
+    <script src="angular.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
